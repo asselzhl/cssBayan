@@ -11,7 +11,7 @@ html,body{
 	height: 100%;
 	font-size: 100%;
 	line-height: 1;
-	font-size: 18px;
+	font-size: 24px;
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -23,7 +23,29 @@ h1 {
     text-align: center;
 }
 .accordion {
-  padding: 1em;
+  padding: 0 4em 2em;
+
+}
+@media (min-width: 319px) {
+    .accordion  {
+        padding: 0 1em 1em;
+    }
+    h1 {
+        padding: 1em 0 0;
+        font-size: 1em;
+    }
+}
+@media (min-width: 819px) {
+    h1 {
+        padding: 1em 0 0;
+        font-size: 1.5em;
+    }
+}
+@media (min-width: 1919px) {
+    h1 {
+        padding: 1em 0 0;
+        font-size: 2em;
+    }
 }
 .accordion input[name=panel] {
   display: none;
@@ -42,11 +64,26 @@ h1 {
   background-size: contain;
   background-position: right;
 }
-
+@media (min-width: 319px) {
+    .accordion label {
+        font-size: 0.6em;
+    }
+}
+@media (min-width: 819px) {
+    .accordion label {
+        font-size: 0.8em;
+    }
+}
+@media (min-width: 1919px) {
+    .accordion label {
+        font-size: 1.5em;
+    }
+}
 .accordion label:hover {
   color: #27ae60;
   
 }
+.accordion label:hover
 .accordion input:checked + label {
     background-image: url(/assets/icons/cross.svg);
     background-repeat: no-repeat;
@@ -59,23 +96,22 @@ h1 {
   overflow: hidden;
   height: 0px;
   transition: height 0.4s cubic-bezier(0.865, 0.14, 0.095, 0.87);
+  width: 50%;
+  margin: auto;
 }
 
-.accordion .accordion__content {
-  padding: 1em;
-}
-.accordion .accordion__content {
-  font-size: 0.825em;
-  line-height: 1.4em;
-}
-input[name=panel]:checked ~ .accordion__content {
-  height: 100%;
-}
-input[name=panel]:hover ~ .accordion__content {
-    height: 100%;
+
+
+@media (max-width: 819px) {
+    .accordion .accordion__content {
+        width: 75%;
+    }
 }
 img {
-    display: block;
-    margin: auto;
     padding: 1em;
+    width: 100%;
+}
+input[name=panel]:checked~.accordion__content  {
+    height: 100%;
+    transition: all 2s;
 }
