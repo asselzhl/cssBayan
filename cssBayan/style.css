@@ -68,19 +68,19 @@ h1 {
 @media (min-width: 1920px) {
     .accordion label {
         font-size: 2em;
+        background-image: none;
     }
-}
-/*
-.accordion:hover label {
-    background-image: url(/assets/icons/plus.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: right;
-}
-*/
-.accordion label:hover {
-    color: #ff0000;
-  
+    .accordion:hover label {
+        background-image: url(/assets/icons/plus.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right;
+    }
+    .accordion label:hover {
+        color: #ff0000;
+
+    }
+    
 }
 .accordion input:checked ~ label {
     background-image: url(/assets/icons/cross.svg);
