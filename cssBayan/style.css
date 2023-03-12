@@ -1,0 +1,107 @@
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+    box-sizing: border-box;
+}
+nav,footer,header,aside {
+    display: block;
+}
+html,body{
+	height: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 24px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    font-family: Inika;
+}
+h1 {
+    padding: 1em;
+    font-size: 1em;
+    text-align: center;
+}
+.accordion {
+    margin: 0 1em 0.5em;
+    cursor: pointer;
+}
+@media (min-width: 820px) {
+    h1 {
+        font-size: 2em;
+        
+    }
+    .accordion {
+        margin: 0 2em 3em;
+    }
+}
+@media (min-width: 1920px) {
+    h1 {
+        font-size: 4em;
+        
+    }
+    .accordion {
+        margin: 0 4em;
+    }
+}
+.accordion input[name=panel] {
+    display: none;
+}
+.accordion label {
+    display: block;
+    padding: 1em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    font-size: 0.5em;
+    color: #000000;
+    cursor: pointer;
+    background-image: url(/assets/icons/plus.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+}
+@media (min-width: 820px) {
+    .accordion label {
+        font-size: 1em;
+    }
+}
+@media (min-width: 1920px) {
+    .accordion label {
+        font-size: 2em;
+        background-image: none;
+    }
+    .accordion:hover label {
+        background-image: url(/assets/icons/plus.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right;
+    }
+    .accordion label:hover {
+        color: #ff0000;
+
+    }
+    
+}
+.accordion input:checked ~ label {
+    background-image: url(/assets/icons/cross.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    color: #ff0000;
+}
+
+.accordion .accordion__content {
+    overflow: hidden;
+    height: 0px;
+    transition: height 0.4s cubic-bezier(0.865, 0.14, 0.095, 0.87);
+    width: 75%;
+    margin: auto;
+}
+img {
+    padding: 0.5em;
+    width: 100%;
+}
+input[name=panel]:checked~.accordion__content  {
+    height: 100%;
+    transition: all 2s;
+}
